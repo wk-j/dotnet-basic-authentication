@@ -38,12 +38,18 @@ namespace MyWeb {
                 _logger.LogError(ex.ToString());
             }
 
-            context.Result = new UnauthorizedResult();
+            ReturnUnauthorizedResult(context);
+
         }
 
         private bool IsAuthorized(AuthorizationFilterContext context, string user, string password) {
             var userService = context.HttpContext.RequestServices.GetRequiredService<UserService>();
             return userService.IsValidUser(user, password);
+        }
+
+        private void ReturnUnauthorizedResult(AuthorizationFilterContext context) {
+            context.HttpContext.Response.Headers["WWW-Authenticate"] = "Basic";
+            context.Result = new UnauthorizedResult();
         }
     }
 }
