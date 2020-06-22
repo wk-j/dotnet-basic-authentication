@@ -1,0 +1,10 @@
+
+GET http://localhost:5000/WeatherForecast
+
+###
+GET http://localhost:5000/WeatherForecast
+Authorization: Basic admin 1234
+
+###
+GET http://localhost:5000/WeatherForecast
+Authorization: Basic admin admin
