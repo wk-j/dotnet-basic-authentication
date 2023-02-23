@@ -1,0 +1,9 @@
+GET http://localhost:5187/api/hello/hi
+Authorization: Basic1 YWRtaW46bG9zbzg4OA==
+
+###
+GET http://localhost:5187/api/hello/hi
+Authorization: Basic2 YWRtaW46bG9zbzk5OQ==
+
+###
+GET http://localhost:5187/api/hello/hi
